@@ -1,0 +1,14 @@
+services:
+  auth-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+      args:
+        - APP=auth-service
+    ports:
+      - "3000:3000" 
+    env_file:
+      - ./apps/auth-service/.env
+    volumes:
+      - ./apps/auth-service:/app/apps/auth-service
+      - /app/node_modules
