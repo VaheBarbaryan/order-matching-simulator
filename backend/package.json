@@ -29,6 +29,7 @@
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
     "@nestjs/platform-fastify": "^11.1.9",
+    "fastify": "^5.6.2",
     "http-proxy-middleware": "^3.0.5",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
@@ -75,7 +76,11 @@
     "coverageDirectory": "./coverage",
     "testEnvironment": "node",
     "roots": [
-      "<rootDir>/apps/"
-    ]
+      "<rootDir>/apps/",
+      "<rootDir>/libs/"
+    ],
+    "moduleNameMapper": {
+      "^@common/common(|/.*)$": "<rootDir>/libs/common/src/$1"
+    }
   }
 }
